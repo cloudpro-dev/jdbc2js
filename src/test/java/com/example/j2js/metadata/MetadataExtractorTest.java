@@ -2,6 +2,8 @@ package com.example.j2js.metadata;
 
 import com.example.j2js.DatabaseConfig;
 import org.hamcrest.Matchers;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -18,10 +20,15 @@ public class MetadataExtractorTest {
     private static DatabaseConfig config;
 
     @BeforeClass
-    public static void setup() throws Exception {
+    public static void setup() {
         config = new DatabaseConfig();
         conn = config.getConnection();
         config.init();
+    }
+
+    @AfterClass
+    public static void afterClass() {
+        config.drop();
     }
 
     @Test

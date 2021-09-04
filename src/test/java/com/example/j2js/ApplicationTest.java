@@ -17,11 +17,16 @@ public class ApplicationTest {
     private final static String password = "";
 
     @BeforeClass
-    public static void beforeClass() throws Exception {
+    public static void beforeClass() {
         dbConfig = new DatabaseConfig(url, username, password);
 
         // setup mock data in H2 database
         dbConfig.init();
+    }
+
+    @AfterClass
+    public static void afterClass() {
+        dbConfig.drop();
     }
 
     @Test

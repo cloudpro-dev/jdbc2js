@@ -39,6 +39,10 @@ public class DatabaseConfig {
         createData();
     }
 
+    public void drop() {
+        dropTables();
+    }
+
     private void createTables() {
         try {
             connection.createStatement().executeUpdate("create table CUSTOMER (ID int primary key auto_increment COMMENT 'Unique customer identifier', NAME VARCHAR(45) NOT NULL DEFAULT 'test' COMMENT 'Name of customer', AGE INTEGER NOT NULL COMMENT 'Age of customer', BALANCE DECIMAL(10,2) NOT NULL COMMENT 'Balance of the customer')");
@@ -55,6 +59,16 @@ public class DatabaseConfig {
         }
         catch (SQLException e) {
             LOG.error("Cannot insert table data", e);
+        }
+    }
+
+    private void dropTables() {
+        try {
+            connection.createStatement().executeUpdate("DROP TABLE CUST_ADDRESS");
+            connection.createStatement().executeUpdate("DROP TABLE CUSTOMER");
+        }
+        catch (SQLException e) {
+            LOG.error("Cannot drop tables", e);
         }
     }
 }
