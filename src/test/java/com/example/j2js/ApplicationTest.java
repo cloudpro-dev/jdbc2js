@@ -31,6 +31,6 @@ public class ApplicationTest {
 
     @Test
     public void givenValidArguments_whenRunningApplication_thenSucceed() throws SQLException, JsonProcessingException {
-        Application app = new Application(url, username, password, "CUSTOMER");
+        Application app = new Application(url, username, password, "/CUSTOMER");
     }
 }

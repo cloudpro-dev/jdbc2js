@@ -21,7 +21,10 @@ public class Application {
         DatabaseConfig databaseConfig = new DatabaseConfig(url, username, password);
         MetadataExtractor extractor = new MetadataExtractor(databaseConfig.getConnection());
         JsonSchemaGenerator schemaGenerator = new JsonSchemaGenerator();
-        String jsonSchema = schemaGenerator.generateSchema(extractor.extractMetadata(tableName));
+
+        String[] parts = tableName.split("/");
+        String jsonSchema = schemaGenerator.generateSchema(extractor.extractMetadata(parts[0], parts[1]));
+
         System.out.println(jsonSchema);
     }
 
@@ -43,7 +46,7 @@ public class Application {
     }
 
     private static void printUsage() {
-        System.out.println("Usage: java -jar sql2schema.jar url username password table");
+        System.out.println("Usage: java -jar sql2schema.jar url username password schema/table");
     }
 
 }

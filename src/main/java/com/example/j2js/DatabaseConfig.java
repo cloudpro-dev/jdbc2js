@@ -14,7 +14,10 @@ public class DatabaseConfig {
 
     public DatabaseConfig() {
         try {
-            // Class.forName("org.h2.Driver");
+            // TODO we should setup Database vendor specific JDBC URL
+            // h2:mem:testdb;MODE=MSSQLServer
+            // h2:mem:testdb;MODE=MySQL
+            // h2:mem:testdb;MODE=Oracle
             String url = "jdbc:h2:mem:testdb";
             connection = DriverManager.getConnection(url, "sa", "");
         } catch (SQLException e) {

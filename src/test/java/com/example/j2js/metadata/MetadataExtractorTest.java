@@ -34,7 +34,7 @@ public class MetadataExtractorTest {
     @Test
     public void givenSetup_whenSelecting_thenGetRow() throws SQLException {
         MetadataExtractor extractor = new MetadataExtractor(conn);
-        Set<ColumnDefinition> results = extractor.extractMetadata("CUSTOMER");
+        Set<ColumnDefinition> results = extractor.extractMetadata(null, "CUSTOMER");
         assertThat(results.size(), is(4));
         System.out.println(results);
     }
