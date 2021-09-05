@@ -107,7 +107,16 @@ public class JsonSchemaGenerator {
             case "REAL":
             case "DOUBLE":
             case "FLOAT":
-                return new BigDecimal("9".repeat(columnDefinition.getSize()-columnDefinition.getDecimals()) + "." + "9".repeat(columnDefinition.getDecimals()));
+                // Generate a number in the format 99999.99 based on column definition
+                // Math.max ensure number cannot be lower than 0
+                Integer precision = columnDefinition.getSize()-Math.max(columnDefinition.getDecimals(), 0);
+                Integer scale = Math.max(columnDefinition.getDecimals(), 0);
+                // default if no precision is defined
+                if(precision == 0) {
+                    // default precision to 12 digits
+                    precision = 12;
+                }
+                return new BigDecimal("9".repeat(precision) + "." + "9".repeat(scale));
             default:
                 return null;
         }
