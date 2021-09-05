@@ -1,8 +1,6 @@
 # JDBC 2 JSON Schema (J2JS)
 A utility application to converts database tables to JSON Schema files.
 
-This project is part of the FieldViewJS project which visualises mappings between data in different domains.  This program is used to ingest data from a database and generate a JSON schema file which can then be used as an input into the FieldViewJS application. 
-
 The current implementation will generate [JSON Schema](https://json-schema.org/) which complies with the [Draft 4 specification](https://json-schema.org/specification-links.html#draft-4)
 
 ## Requirements
@@ -55,16 +53,20 @@ Read *one or more* rows from the database table and set the `examples` property 
 
 The `examples` property is defined at the column level and can hold one or more entries. 
 
-## Integration Tests
+## Getting Started
 
-The following CLI command will execute the JAR and extract data from a local Oracle 12c database.
+Build the project
 ```shell
 ./mvnw package
-./java -jar sql2schema.jar jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme TABLE_NAME
+```
+
+The following CLI command will execute the JAR and generate a JSON schema from an existing database schema.
+```shell
+java -cp target/libs -jar target/sql2schema.jar jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme LSS/ENT_ORDER_CINS
 ```
 
 If you prefer to build and run using Maven:
 ```shell
-./mvnw compile exec:java -Dexec.args="jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme TABLE_NAME"
+./mvnw compile exec:java -Dexec.args="jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme LSS/ENT_ORDER_CINS"
 ```
 
