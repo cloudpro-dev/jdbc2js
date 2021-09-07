@@ -60,13 +60,31 @@ Build the project
 ./mvnw package
 ```
 
-The following CLI command will execute the JAR and generate a JSON schema from an existing database schema.
-```shell
-java -cp target/libs -jar target/sql2schema.jar jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme LSS/ENT_ORDER_CINS
-```
-
 If you prefer to build and run using Maven:
 ```shell
 ./mvnw compile exec:java -Dexec.args="jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme LSS/ENT_ORDER_CINS"
 ```
 
+## Installation
+The artifacts built by this project are located in the `target/dist` directory.
+
+To install the program, copy this directory and its contents to any machine with Java 11+ installed.
+
+```shell
+cd dist/bin
+java -cp "./*;../lib/*" com.example.j2js.Application jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme LSS/ENT_ORDER_CINS
+```
+We cannot use `-jar` and `cp` at the same time for `java` command.  Instead, we include the application JAR in the classpath and call the main class manually.
+
+## Database drivers
+This application **does not contain any drivers** for connectivity to a database.
+
+You must locate and download a relevant database driver and copy to the `lib` directory in the application installation directory.
+
+The type of driver required by JDBC is based upon the `JDBC URL` that is supplied when running the program.
+
+To ensure database drivers are kept separate from the main application libraries, and each other, it is recommended is to create a new directory, per database version, in the main installation `lib` directory e.g. `<installation-path>/lib/oracle-12g` and copy all the necessary driver JAR files into that directory.  You can then include the driver directory in the `classpath` argument to ensure the drivers are available to the application at runtime.
+
+```shell
+java -cp "./*;../lib/*;../lib/oracle-12g/*" ...
+```
