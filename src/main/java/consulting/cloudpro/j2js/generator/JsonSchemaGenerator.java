@@ -1,6 +1,6 @@
-package com.example.j2js.generator;
+package consulting.cloudpro.j2js.generator;
 
-import com.example.j2js.metadata.ColumnDefinition;
+import consulting.cloudpro.j2js.metadata.ColumnDefinition;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -30,11 +30,11 @@ public class JsonSchemaGenerator {
         final Schema root = new Schema();
         // id is based on database schema and table name
         // all columns should have the same schema and table
-        root.setId(convertId(columns.stream().findFirst().get()));
+        root.setId(convertId(columns.stream().findFirst().orElseThrow()));
         root.setSchema(Schema.SCHEMA_URL);
 
         // convert all ColumnDefinition objects to Schema objects
-        columns.stream().forEach(c -> {
+        columns.forEach(c -> {
             Schema schema = new Schema();
 
             // convert data type
@@ -109,8 +109,8 @@ public class JsonSchemaGenerator {
             case "FLOAT":
                 // Generate a number in the format 99999.99 based on column definition
                 // Math.max ensure number cannot be lower than 0
-                Integer precision = columnDefinition.getSize()-Math.max(columnDefinition.getDecimals(), 0);
-                Integer scale = Math.max(columnDefinition.getDecimals(), 0);
+                int precision = columnDefinition.getSize()-Math.max(columnDefinition.getDecimals(), 0);
+                int scale = Math.max(columnDefinition.getDecimals(), 0);
                 // default if no precision is defined
                 if(precision == 0) {
                     // default precision to 12 digits

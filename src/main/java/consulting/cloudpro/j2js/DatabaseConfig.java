@@ -1,11 +1,9 @@
-package com.example.j2js;
+package consulting.cloudpro.j2js;
 
 import java.sql.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.xml.transform.Result;
 
 public class DatabaseConfig {
     private static final Logger LOG = LoggerFactory.getLogger(DatabaseConfig.class);

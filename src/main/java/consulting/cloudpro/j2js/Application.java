@@ -1,7 +1,7 @@
-package com.example.j2js;
+package consulting.cloudpro.j2js;
 
-import com.example.j2js.generator.JsonSchemaGenerator;
-import com.example.j2js.metadata.MetadataExtractor;
+import consulting.cloudpro.j2js.generator.JsonSchemaGenerator;
+import consulting.cloudpro.j2js.metadata.MetadataExtractor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.sql.SQLException;

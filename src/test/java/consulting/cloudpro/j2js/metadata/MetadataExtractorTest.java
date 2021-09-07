@@ -1,8 +1,6 @@
-package com.example.j2js.metadata;
+package consulting.cloudpro.j2js.metadata;
 
-import com.example.j2js.DatabaseConfig;
-import org.hamcrest.Matchers;
-import org.junit.After;
+import consulting.cloudpro.j2js.DatabaseConfig;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

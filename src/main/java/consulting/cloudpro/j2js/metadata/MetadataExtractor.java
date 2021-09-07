@@ -1,4 +1,4 @@
-package com.example.j2js.metadata;
+package consulting.cloudpro.j2js.metadata;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

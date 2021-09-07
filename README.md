@@ -72,7 +72,7 @@ To install the program, copy this directory and its contents to any machine with
 
 ```shell
 cd dist/bin
-java -cp "./*;../lib/*" com.example.j2js.Application jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme LSS/ENT_ORDER_CINS
+java -cp "./*;../lib/*" consulting.cloudpro.j2js.Application jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme LSS/ENT_ORDER_CINS
 ```
 We cannot use `-jar` and `cp` at the same time for `java` command.  Instead, we include the application JAR in the classpath and call the main class manually.
 

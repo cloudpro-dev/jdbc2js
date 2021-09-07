@@ -1,4 +1,4 @@
-package com.example.j2js.metadata;
+package consulting.cloudpro.j2js.metadata;
 
 /**
  * Domain object containing all the meta-data for a single database column.

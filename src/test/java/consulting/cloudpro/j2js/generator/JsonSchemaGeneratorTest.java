@@ -1,9 +1,10 @@
-package com.example.j2js.generator;
+package consulting.cloudpro.j2js.generator;
 
-import com.example.j2js.metadata.ColumnDefinition;
+import consulting.cloudpro.j2js.metadata.ColumnDefinition;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +16,7 @@ public class JsonSchemaGeneratorTest {
 
     @Test
     public void givenMetadata_whenValid_thenGenerateJsonSchema() throws JsonProcessingException {
-        Set<ColumnDefinition> cols = new HashSet<>();
+
 
         ColumnDefinition idCol = new ColumnDefinition();
         idCol.setType("INTEGER");
@@ -39,7 +40,7 @@ public class JsonSchemaGeneratorTest {
         balanceCol.setDecimals(2);
         balanceCol.setRemarks("Customer balance");
 
-        cols.addAll(Arrays.asList(idCol, nameCol, balanceCol));
+        Set<ColumnDefinition> cols = new HashSet<>(Arrays.asList(idCol, nameCol, balanceCol));
 
         JsonSchemaGenerator generator = new JsonSchemaGenerator();
         String schema = generator.generateSchema(cols);

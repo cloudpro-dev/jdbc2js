@@ -1,8 +1,7 @@
-package com.example.j2js;
+package consulting.cloudpro.j2js;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
