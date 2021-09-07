@@ -1,6 +1,6 @@
-package consulting.cloudpro.j2js.metadata;
+package consulting.cloudpro.jdbc2js.metadata;
 
-import consulting.cloudpro.j2js.DatabaseConfig;
+import consulting.cloudpro.jdbc2js.DatabaseConfig;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

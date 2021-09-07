@@ -1,10 +1,9 @@
-package consulting.cloudpro.j2js.generator;
+package consulting.cloudpro.jdbc2js.generator;
 
-import consulting.cloudpro.j2js.metadata.ColumnDefinition;
+import consulting.cloudpro.jdbc2js.metadata.ColumnDefinition;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;

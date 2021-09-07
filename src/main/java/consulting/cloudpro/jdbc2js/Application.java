@@ -1,7 +1,7 @@
-package consulting.cloudpro.j2js;
+package consulting.cloudpro.jdbc2js;
 
-import consulting.cloudpro.j2js.generator.JsonSchemaGenerator;
-import consulting.cloudpro.j2js.metadata.MetadataExtractor;
+import consulting.cloudpro.jdbc2js.generator.JsonSchemaGenerator;
+import consulting.cloudpro.jdbc2js.metadata.MetadataExtractor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.sql.SQLException;

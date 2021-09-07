@@ -1,4 +1,4 @@
-package consulting.cloudpro.j2js.generator;
+package consulting.cloudpro.jdbc2js.generator;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,4 +1,4 @@
-# JDBC 2 JSON Schema (J2JS)
+# JDBC 2 JSON Schema (jdbc2js)
 A utility application to converts database tables to JSON Schema files.
 
 The current implementation will generate [JSON Schema](https://json-schema.org/) which complies with the [Draft 4 specification](https://json-schema.org/specification-links.html#draft-4)
@@ -60,11 +60,6 @@ Build the project
 ./mvnw package
 ```
 
-If you prefer to build and run using Maven:
-```shell
-./mvnw compile exec:java -Dexec.args="jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme LSS/ENT_ORDER_CINS"
-```
-
 ## Installation
 The artifacts built by this project are located in the `target/dist` directory.
 
@@ -72,7 +67,7 @@ To install the program, copy this directory and its contents to any machine with
 
 ```shell
 cd dist/bin
-java -cp "./*;../lib/*" consulting.cloudpro.j2js.Application jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme LSS/ENT_ORDER_CINS
+java -cp "./*;../lib/*" consulting.cloudpro.jdbc2js.Application jdbc:oracle:thin:@//localhost:1521/ORCLPDB1 lss changeme LSS/ENT_ORDER_CINS
 ```
 We cannot use `-jar` and `cp` at the same time for `java` command.  Instead, we include the application JAR in the classpath and call the main class manually.
 

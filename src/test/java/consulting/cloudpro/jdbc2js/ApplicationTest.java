@@ -1,4 +1,4 @@
-package consulting.cloudpro.j2js;
+package consulting.cloudpro.jdbc2js;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.AfterClass;

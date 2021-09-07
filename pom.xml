@@ -3,9 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>j2js</artifactId>
+    <artifactId>jdbc2js</artifactId>
     <version>0.1.0-SNAPSHOT</version>
-    <name>j2js</name>
+    <name>jdbc2js</name>
     <groupId>cloudpro.consulting</groupId>
     <packaging>jar</packaging>
 
@@ -129,7 +129,7 @@
                     <archive>
                         <manifest>
                             <mainClass>
-                                consulting.cloudpro.j2js.Application
+                                consulting.cloudpro.jdbc2js.Application
                             </mainClass>
                         </manifest>
                     </archive>
@@ -141,7 +141,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>${exec-maven-plugin.version}</version>
                 <configuration>
-                    <mainClass>consulting.cloudpro.j2js.Application</mainClass>
+                    <mainClass>consulting.cloudpro.jdbc2js.Application</mainClass>
                 </configuration>
             </plugin>
         </plugins>
